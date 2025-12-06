@@ -1,10 +1,11 @@
 <script lang="ts">
 	import ExchangePanel from '$lib/components/ExchangePanel.svelte';
+	import ValueCalculator from '$lib/components/ValueCalculator.svelte';
 </script>
 
 <!-- Hero -->
 <div class="p-2 md:p-4">
-	<div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
+	<div class="max-w-340 mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
 		<!-- Announcement Banner -->
 		<div class="flex justify-center">
 			<a
@@ -52,7 +53,7 @@
 			</p>
 		</div>
 
-		<div class="mt-5 flex flex-col sm:flex-row justify-center items-center gap-1.5 sm:gap-3">
+		<div class="my-8 flex flex-col sm:flex-row justify-center items-center gap-1.5 sm:gap-3">
 			<div class="flex flex-wrap gap-1 sm:gap-3">
 				<span class="text-sm text-gray-600 dark:text-neutral-400">Package Manager:</span>
 				<span class="text-sm font-bold text-gray-900 dark:text-white">npm</span>
@@ -88,6 +89,7 @@
 			</a>
 		</div>
 		<ExchangePanel />
+		<ValueCalculator />
 	</div>
 </div>
 <!-- End Hero -->

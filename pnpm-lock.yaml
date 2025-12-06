@@ -8,6 +8,21 @@ importers:
 
   .:
     dependencies:
+      '@floating-ui/dom':
+        specifier: ^1.7.4
+        version: 1.7.4
+      '@preline/accordion':
+        specifier: ^3.2.3
+        version: 3.2.3
+      '@preline/collapse':
+        specifier: ^3.2.3
+        version: 3.2.3
+      '@preline/dropdown':
+        specifier: ^3.2.3
+        version: 3.2.3
+      '@preline/tree-view':
+        specifier: ^3.2.3
+        version: 3.2.3
       '@tailwindcss/vite':
         specifier: ^4.1.17
         version: 4.1.17(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2))
@@ -318,6 +333,18 @@ packages:
 
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
+
+  '@preline/accordion@3.2.3':
+    resolution: {integrity: sha512-bxD40aYgnsyuxPNmFN5+4EKAna9PCXpxpA/MrY3j5zpkTyBRxcEykucLE/aPTL0LrUd8/ifwoIERRSVcL7GTFA==}
+
+  '@preline/collapse@3.2.3':
+    resolution: {integrity: sha512-9h3idfw3+8TJB4Apc2kki+DIunq2gahmwLJkmRmK6r2Z3ONkraKAvKR8ZeyxmHsjucebfcKIQwec3nqlsu86nQ==}
+
+  '@preline/dropdown@3.2.3':
+    resolution: {integrity: sha512-cvTJQ8rPdb6QP9tfPwdCgjhif3+/UR1b6edDETURSaTCBzGtfQhoiSCFZAn1fNBwJEE0yYH007vcp+VOEDTJYw==}
+
+  '@preline/tree-view@3.2.3':
+    resolution: {integrity: sha512-9Zqbd2cj+pOl0hcgrmdX9igejWt0wKRlltQ//+Va80endMRY7dhJMqBleAhbJi/ztIhxOzrt7yAK3+rLr9lwNw==}
 
   '@rollup/rollup-android-arm-eabi@4.53.3':
     resolution: {integrity: sha512-mRSi+4cBjrRLoaal2PnqH82Wqyb+d3HsPUN/W+WslCXsZsyHa9ZeQQX/pQsZaVIWDkPcpV6jJ+3KLbTbgnwv8w==}
@@ -1539,6 +1566,16 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.5
 
   '@polka/url@1.0.0-next.29': {}
+
+  '@preline/accordion@3.2.3': {}
+
+  '@preline/collapse@3.2.3': {}
+
+  '@preline/dropdown@3.2.3':
+    dependencies:
+      '@floating-ui/dom': 1.7.4
+
+  '@preline/tree-view@3.2.3': {}
 
   '@rollup/rollup-android-arm-eabi@4.53.3':
     optional: true

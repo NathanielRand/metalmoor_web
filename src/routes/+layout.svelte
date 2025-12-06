@@ -45,7 +45,7 @@
 			<!-- End Logo -->
 
 			<div class="-ms-3 text-5xl text-stone-100 font-black">
-				etal<span class="font-normal">Moor</span>
+				etal<span class="font-black">Moor</span>
 			</div>
 		</div>
 
@@ -56,7 +56,7 @@
 					class="group inline-flex items-center gap-x-2 py-2 px-3 bg-amber-500/90 font-medium text-sm text-nowrap text-neutral-800 rounded-full focus:outline-hidden"
 					href="#"
 				>
-					Request demo
+					Exchange
 				</a>
 			</div>
 
@@ -116,20 +116,11 @@
 			>
 				<a
 					class="pe-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-hidden focus:text-neutral-300"
-					href="../templates/agency/index.html"
-					aria-current="page">Home</a
+					href="#">Calculator</a
 				>
 				<a
 					class="pe-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-hidden focus:text-neutral-300"
-					href="#">Stories</a
-				>
-				<a
-					class="pe-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-hidden focus:text-neutral-300"
-					href="#">Reviews</a
-				>
-				<a
-					class="pe-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-hidden focus:text-neutral-300"
-					href="#">Approach</a
+					href="#">Dealers</a
 				>
 
 				<!-- Dropdown Link -->
@@ -145,7 +136,7 @@
 						aria-expanded="false"
 						aria-label="Dropdown"
 					>
-						Product
+						Products
 						<svg
 							class="hs-dropdown-open:-rotate-180 md:hs-dropdown-open:rotate-0 duration-300 ms-auto md:ms-1 shrink-0 size-3.5"
 							xmlns="http://www.w3.org/2000/svg"

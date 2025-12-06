@@ -3,7 +3,7 @@
 </script>
 
 <div
-	class="w-fit mx-auto m-6 flex flex-col sm:flex-row justify-center items-center gap-1.5 sm:gap-3 bg-white border border-gray-200 shadow-2xs rounded-xl p-4 md:p-5 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400"
+	class="w-fit mx-auto m-6 flex flex-col sm:flex-row justify-center items-center gap-1.5 sm:gap-8 bg-white border border-gray-200 shadow-2xs rounded-3xl p-4 md:p-10 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400"
 >
 	<div>
 		<div
@@ -32,6 +32,7 @@
 		</button>
 	</div>
 	<div>
+		<h3 class="text-center mt-2 uppercase tracking-widest mb-8 font-black text-6xl">Gold</h3>
 		<span
 			class="inline-flex items-center gap-x-1.5 py-1.5 px-6 rounded-full text-5xl font-thin bg-stone-100 text-amber-400 dark:bg-stone-800/50 dark:text-amber-400"
 		>
@@ -50,9 +51,9 @@
 			>
 			4,213.94
 		</span>
-		<p class="text-center mt-2 uppercase tracking-widest">Spot Price</p>
+		<p class="text-center mt-6 uppercase tracking-widest">Spot Price</p>
 		<p class="text-center mt-2 text-xs italic">Updated 12:00:30 DD/MM</p>
-		<button class="text-center mx-auto flex mt-4">
+		<button class="text-center mx-auto flex mt-6 border rounded-full px-3 py-2 items-center">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 24 24"
@@ -92,7 +93,7 @@
 		</div>
 		<button
 			type="button"
-			class="py-2 mt-2 px-2 w-full rounded-3xl border border-transparent hover:border-stone-950 hover:shadow hover:shadow-red-200 bg-stone-800 text-green-400 hover:bg-stone-200 focus:outline-hidden focus:bg-stone-200 disabled:opacity-50 disabled:pointer-events-none dark:text-green-400 dark:hover:bg-stone-800/50 dark:focus:bg-stone-800/50"
+			class="py-2 mt-2 px-2 w-full rounded-3xl border border-transparent hover:border-stone-950 hover:shadow hover:shadow-green-200 bg-stone-800 text-green-400 hover:bg-stone-200 focus:outline-hidden focus:bg-stone-200 disabled:opacity-50 disabled:pointer-events-none dark:text-green-400 dark:hover:bg-stone-800/50 dark:focus:bg-stone-800/50"
 		>
 			<span class="mx-auto tracking-widest font-black text-2xl uppercase">Buy</span>
 		</button>
