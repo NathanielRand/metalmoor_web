@@ -1,9 +1,67 @@
 <script lang="ts">
-	// let { data } = $props();
+	// import { onMount } from 'svelte';
+
+	let spotPrices = {
+		goldBid: 0.0,
+		goldAsk: 0.0,
+		goldAvg: 0.0,
+		silverBid: 0.0,
+		silverAsk: 0.0,
+		silverAvg: 0.0,
+		platBid: 0.0,
+		platAsk: 0.0,
+		platAvg: 0.0,
+		loading: true
+	};
+
+	// Mock data for testing
+	spotPrices.goldBid = 4186.66;
+	spotPrices.goldAsk = 4206.63;
+
+	// --- Data Fetching (freegoldprice) ---
+	// onMount(async () => {
+	// 	console.log('%c[CLIENT] Fetching /api/metal-prices...', 'color: orange; font-weight: bold;');
+
+	// 	try {
+	// 		const response = await fetch('/api/metal-prices').catch((err) => {
+	// 			console.error('[CLIENT] Fetch threw BEFORE response:', err);
+	// 			throw err;
+	// 		});
+
+	// 		console.log('[CLIENT] Response:', response);
+	// 		console.log('[CLIENT] Status:', response.status, 'OK:', response.ok);
+
+	// 		const raw = await response.text();
+	// 		console.log('[CLIENT] RAW TEXT:', raw);
+
+	// 		let data;
+	// 		try {
+	// 			data = JSON.parse(raw);
+	// 			console.log('[CLIENT] PARSED JSON:', data.GSPPJ);
+	// 		} catch (err) {
+	// 			console.error('[CLIENT] JSON PARSE ERROR:', err);
+	// 			throw err;
+	// 		}
+
+	// 		console.log('[CLIENT] Extracting bids...');
+
+	// 		spotPrices.goldAsk = data?.GSPPJ?.Gold?.USD?.ask ?? 0;
+	// 		spotPrices.goldBid = data?.GSPPJ?.Gold?.USD?.bid ?? 0;
+	// 		spotPrices.silverBid = data?.GSPPJ?.Silver?.USD?.bid ?? 0;
+	// 		spotPrices.platBid = data?.GSPPJ?.Platinum?.USD?.bid ?? 0;
+
+	// 		console.log('[CLIENT] spotPrices:', spotPrices);
+	// 	} catch (error) {
+	// 		console.error('[CLIENT] FINAL CATCH ERROR:', error);
+	// 	} finally {
+	// 		spotPrices.loading = false;
+	// 		console.log('[CLIENT] Loading complete');
+	// 	}
+	// });
 </script>
 
 <div
-	class="w-fit mx-auto m-6 flex flex-col sm:flex-row justify-center items-center gap-1.5 sm:gap-8 bg-white border border-gray-200 shadow-2xs rounded-3xl p-4 md:p-10 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400"
+	class="w-full mx-auto m-6 flex flex-col sm:flex-row justify-center items-center gap-1.5 sm:gap-8 bg-white border border-gray-200 shadow-2xs rounded-3xl p-4 md:p-10 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400"
 >
 	<div>
 		<div
@@ -22,7 +80,7 @@
 					d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
 				/></svg
 			>
-			4,213.94
+			{spotPrices?.goldBid}
 		</div>
 		<button
 			type="button"
@@ -49,7 +107,7 @@
 					d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
 				/></svg
 			>
-			4,213.94
+			{spotPrices?.goldAvg}
 		</span>
 		<p class="text-center mt-6 uppercase tracking-widest">Spot Price</p>
 		<p class="text-center mt-2 text-xs italic">Updated 12:00:30 DD/MM</p>
@@ -89,7 +147,7 @@
 					d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
 				/></svg
 			>
-			4,213.94
+			{spotPrices?.goldAsk}
 		</div>
 		<button
 			type="button"

@@ -5,33 +5,10 @@
 	import { afterNavigate } from '$app/navigation';
 	let { children } = $props();
 
-	// Logic for reinit components when app is mounted/page change
 	afterNavigate(() => {
 		window.HSStaticMethods.autoInit();
 	});
 </script>
-
-<svelte:head>
-	<link rel="icon" href={favicon} />
-	<script>
-		// This code should be added to <head>.
-		// It's used to prevent page load glitches.
-		const html = document.querySelector('html');
-		const isLightOrAuto =
-			localStorage.getItem('hs_theme') === 'light' ||
-			(localStorage.getItem('hs_theme') === 'auto' &&
-				!window.matchMedia('(prefers-color-scheme: dark)').matches);
-		const isDarkOrAuto =
-			localStorage.getItem('hs_theme') === 'dark' ||
-			(localStorage.getItem('hs_theme') === 'auto' &&
-				window.matchMedia('(prefers-color-scheme: dark)').matches);
-
-		if (isLightOrAuto && html.classList.contains('dark')) html.classList.remove('dark');
-		else if (isDarkOrAuto && html.classList.contains('light')) html.classList.remove('light');
-		else if (isDarkOrAuto && !html.classList.contains('dark')) html.classList.add('dark');
-		else if (isLightOrAuto && !html.classList.contains('light')) html.classList.add('light');
-	</script>
-</svelte:head>
 
 <!-- ========== HEADER ========== -->
 <header
@@ -53,17 +30,17 @@
 		<div class="md:order-3 flex items-center gap-x-3">
 			<div class="md:ps-3">
 				<a
-					class="group inline-flex items-center gap-x-2 py-2 px-3 bg-amber-500/90 font-medium text-sm text-nowrap text-neutral-800 rounded-full focus:outline-hidden"
+					class="group inline-flex items-center gap-x-2 py-2 px-3 bg-amber-400/80 tracking-wider font-bold text-lg text-nowrap text-white rounded-full focus:outline-hidden"
 					href="#"
 				>
-					Exchange
+					Custom Build
 				</a>
 			</div>
 
 			<div class="md:hidden">
 				<button
 					type="button"
-					class="hs-collapse-toggle size-9 flex justify-center items-center text-sm font-semibold rounded-full bg-neutral-800 text-white disabled:opacity-50 disabled:pointer-events-none"
+					class="hs-collapse-toggle size-9 flex justify-center items-center text-sm font-bold rounded-full bg-neutral-800 text-white disabled:opacity-50 disabled:pointer-events-none"
 					id="hs-navbar-floating-dark-collapse"
 					aria-expanded="false"
 					aria-controls="hs-navbar-floating-dark"
@@ -115,301 +92,21 @@
 				class="flex flex-col md:flex-row md:items-center md:justify-end gap-y-3 py-2 md:py-0 md:ps-7"
 			>
 				<a
-					class="pe-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-hidden focus:text-neutral-300"
-					href="#">Calculator</a
+					class="pe-3 ps-px sm:px-3 md:py-4 text-lg text-white hover:text-neutral-300 tracking-wider font-bold focus:outline-hidden focus:text-neutral-300"
+					href="#">Buy Ours</a
 				>
 				<a
-					class="pe-3 ps-px sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-hidden focus:text-neutral-300"
-					href="#">Dealers</a
+					class="pe-3 ps-px sm:px-3 md:py-4 text-lg text-white hover:text-neutral-300 tracking-wider font-bold focus:outline-hidden focus:text-neutral-300"
+					href="#">Sell Yours</a
 				>
-
-				<!-- Dropdown Link -->
-				<div
-					class="hs-dropdown [--strategy:static] md:[--strategy:absolute] [--adaptive:none] md:[--trigger:hover] [--auto-close:inside] md:inline-block"
+				<a
+					class="pe-3 ps-px sm:px-3 md:py-4 text-lg text-white hover:text-neutral-300 tracking-wider font-bold focus:outline-hidden focus:text-neutral-300"
+					href="#">About</a
 				>
-					<!-- Link Button -->
-					<button
-						id="hs-pro-anpd"
-						type="button"
-						class="hs-dropdown-toggle md:px-3 md:py-4 w-full md:w-auto flex items-center text-sm text-white hover:text-neutral-300 focus:outline-hidden focus:text-neutral-300"
-						aria-haspopup="menu"
-						aria-expanded="false"
-						aria-label="Dropdown"
-					>
-						Products
-						<svg
-							class="hs-dropdown-open:-rotate-180 md:hs-dropdown-open:rotate-0 duration-300 ms-auto md:ms-1 shrink-0 size-3.5"
-							xmlns="http://www.w3.org/2000/svg"
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg
-						>
-					</button>
-					<!-- End Link Button -->
-
-					<!-- Dropdown Menu -->
-					<div
-						class="hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] lg:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 relative w-full md:w-150 hidden z-10 top-full end-0 rounded-2xl bg-neutral-800 p-1 before:absolute before:-top-4 before:start-0 before:w-full before:h-5 md:after:hidden mt-2 md:mt-0"
-						role="menu"
-						aria-orientation="vertical"
-						aria-labelledby="hs-pro-anpd"
-					>
-						<div class="flex flex-col gap-y-1">
-							<!-- Grid -->
-							<div class="grid grid-cols-1 md:grid-cols-2 gap-1">
-								<div
-									class="p-5 min-h-50 flex flex-col justify-between bg-neutral-900 rounded-t-xl md:rounded-tr-none md:rounded-tl-xl"
-								>
-									<!-- Heading -->
-									<div class="mb-5">
-										<a
-											class="group flex items-center gap-x-2 font-medium text-sm text-neutral-200 hover:text-[#ff0] focus:text-[#ff0] focus:outline-hidden"
-											href="#"
-										>
-											Build
-											<span
-												class="ms-auto size-6 flex shrink-0 justify-center items-center bg-[#ff0] text-black rounded-sm"
-											>
-												<svg
-													class="shrink-0 size-4 transition group-hover:translate-x-0.5 group-focus:translate-x-0.5"
-													xmlns="http://www.w3.org/2000/svg"
-													width="24"
-													height="24"
-													viewBox="0 0 24 24"
-													fill="none"
-													stroke="currentColor"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-													><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
-												>
-											</span>
-										</a>
-									</div>
-									<!-- End Heading -->
-
-									<!-- List -->
-									<ul class="flex flex-col">
-										<li
-											class="py-2 first:pt-0 last:pb-0 first:border-t-0 border-t border-neutral-800"
-										>
-											<a
-												class="group flex items-center gap-x-2 font-medium text-sm text-neutral-200 hover:text-[#ff0] focus:text-[#ff0] focus:outline-hidden"
-												href="#"
-											>
-												<span class="size-1 bg-[#ff0] rounded-full"></span>
-												Websites
-												<span class="ms-auto size-6 flex shrink-0 justify-center items-center">
-													<svg
-														class="shrink-0 size-4 transition group-hover:translate-x-0.5 group-focus:translate-x-0.5"
-														xmlns="http://www.w3.org/2000/svg"
-														width="24"
-														height="24"
-														viewBox="0 0 24 24"
-														fill="none"
-														stroke="currentColor"
-														stroke-width="2"
-														stroke-linecap="round"
-														stroke-linejoin="round"
-														><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
-													>
-												</span>
-											</a>
-										</li>
-
-										<li
-											class="py-2 first:pt-0 last:pb-0 first:border-t-0 border-t border-neutral-800"
-										>
-											<a
-												class="group flex items-center gap-x-2 font-medium text-sm text-neutral-200 hover:text-[#ff0] focus:text-[#ff0] focus:outline-hidden"
-												href="#"
-											>
-												<span class="size-1 bg-[#ff0] rounded-full"></span>
-												Mobile apps
-												<span class="ms-auto size-6 flex shrink-0 justify-center items-center">
-													<svg
-														class="shrink-0 size-4 transition group-hover:translate-x-0.5 group-focus:translate-x-0.5"
-														xmlns="http://www.w3.org/2000/svg"
-														width="24"
-														height="24"
-														viewBox="0 0 24 24"
-														fill="none"
-														stroke="currentColor"
-														stroke-width="2"
-														stroke-linecap="round"
-														stroke-linejoin="round"
-														><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
-													>
-												</span>
-											</a>
-										</li>
-
-										<li
-											class="py-2 first:pt-0 last:pb-0 first:border-t-0 border-t border-neutral-800"
-										>
-											<a
-												class="group flex items-center gap-x-2 font-medium text-sm text-neutral-200 hover:text-[#ff0] focus:text-[#ff0] focus:outline-hidden"
-												href="#"
-											>
-												<span class="size-1 bg-[#ff0] rounded-full"></span>
-												Pages
-												<span class="ms-auto size-6 flex shrink-0 justify-center items-center">
-													<svg
-														class="shrink-0 size-4 transition group-hover:translate-x-0.5 group-focus:translate-x-0.5"
-														xmlns="http://www.w3.org/2000/svg"
-														width="24"
-														height="24"
-														viewBox="0 0 24 24"
-														fill="none"
-														stroke="currentColor"
-														stroke-width="2"
-														stroke-linecap="round"
-														stroke-linejoin="round"
-														><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
-													>
-												</span>
-											</a>
-										</li>
-									</ul>
-									<!-- End List -->
-								</div>
-								<!-- End Col -->
-
-								<div
-									class="p-5 min-h-50 flex flex-col justify-between bg-neutral-900 md:rounded-tr-xl"
-								>
-									<!-- Heading -->
-									<div class="mb-5">
-										<a
-											class="group flex items-center gap-x-3 font-medium text-sm text-neutral-200 hover:text-[#ff0] focus:text-[#ff0] focus:outline-hidden"
-											href="#"
-										>
-											Resources
-											<span
-												class="ms-auto size-6 flex shrink-0 justify-center items-center bg-[#ff0] text-black rounded-sm"
-											>
-												<svg
-													class="shrink-0 size-4 transition group-hover:translate-x-0.5 group-focus:translate-x-0.5"
-													xmlns="http://www.w3.org/2000/svg"
-													width="24"
-													height="24"
-													viewBox="0 0 24 24"
-													fill="none"
-													stroke="currentColor"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-													><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
-												>
-											</span>
-										</a>
-									</div>
-									<!-- End Heading -->
-
-									<!-- List -->
-									<ul class="flex flex-col">
-										<li
-											class="py-2 first:pt-0 last:pb-0 first:border-t-0 border-t border-neutral-800"
-										>
-											<a
-												class="group flex items-center gap-x-2 font-medium text-sm text-neutral-200 hover:text-[#ff0] focus:text-[#ff0] focus:outline-hidden"
-												href="#"
-											>
-												<span class="size-1 bg-[#ff0] rounded-full"></span>
-												Documentation
-												<span class="ms-auto size-6 flex shrink-0 justify-center items-center">
-													<svg
-														class="shrink-0 size-4 transition group-hover:translate-x-0.5 group-focus:translate-x-0.5"
-														xmlns="http://www.w3.org/2000/svg"
-														width="24"
-														height="24"
-														viewBox="0 0 24 24"
-														fill="none"
-														stroke="currentColor"
-														stroke-width="2"
-														stroke-linecap="round"
-														stroke-linejoin="round"
-														><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
-													>
-												</span>
-											</a>
-										</li>
-
-										<li
-											class="py-2 first:pt-0 last:pb-0 first:border-t-0 border-t border-neutral-800"
-										>
-											<a
-												class="group flex items-center gap-x-2 font-medium text-sm text-neutral-200 hover:text-[#ff0] focus:text-[#ff0] focus:outline-hidden"
-												href="#"
-											>
-												<span class="size-1 bg-[#ff0] rounded-full"></span>
-												Support
-												<span class="ms-auto size-6 flex shrink-0 justify-center items-center">
-													<svg
-														class="shrink-0 size-4 transition group-hover:translate-x-0.5 group-focus:translate-x-0.5"
-														xmlns="http://www.w3.org/2000/svg"
-														width="24"
-														height="24"
-														viewBox="0 0 24 24"
-														fill="none"
-														stroke="currentColor"
-														stroke-width="2"
-														stroke-linecap="round"
-														stroke-linejoin="round"
-														><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
-													>
-												</span>
-											</a>
-										</li>
-									</ul>
-									<!-- End List -->
-								</div>
-								<!-- End Col -->
-							</div>
-							<!-- End Grid -->
-
-							<!-- Footer -->
-							<div class="p-2 bg-neutral-900 rounded-b-xl">
-								<div class="flex flex-wrap justify-between items-center gap-1">
-									<a
-										class="py-1.5 ps-3 pe-2 group flex items-center gap-x-1 font-medium text-sm text-neutral-200 hover:text-[#ff0] focus:text-[#ff0] focus:outline-hidden"
-										href="#"
-									>
-										Sessions 2025 ‐ Watch the product keynote live
-										<svg
-											class="shrink-0 size-4 transition group-hover:translate-x-0.5 group-focus:translate-x-0.5"
-											xmlns="http://www.w3.org/2000/svg"
-											width="24"
-											height="24"
-											viewBox="0 0 24 24"
-											fill="none"
-											stroke="currentColor"
-											stroke-width="2"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
-										>
-									</a>
-
-									<a
-										class="py-1.5 px-3 font-medium text-sm text-[#ff0] rounded-full hover:bg-neutral-800 focus:outline-hidden focus:bg-neutral-800"
-										href="#"
-									>
-										Changelog
-									</a>
-								</div>
-							</div>
-							<!-- End Footer -->
-						</div>
-					</div>
-					<!-- End Dropdown Menu -->
-				</div>
-				<!-- End Dropdown Link -->
+				<a
+					class="pe-3 ps-px sm:px-3 md:py-4 text-lg text-white hover:text-neutral-300 tracking-wider font-bold focus:outline-hidden focus:text-neutral-300"
+					href="#">Contact</a
+				>
 			</div>
 		</div>
 		<!-- End Collapse -->

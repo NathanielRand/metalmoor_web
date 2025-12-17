@@ -9,48 +9,33 @@
 	let itemType: string = 'coin';
 
 	let spotPrices = {
-		gold: 2350.0, // Fallback data
-		silver: 29.5, // Fallback data
-		platinum: 1050.0, // Fallback data
+		gold: 4186.66, // Fallback data
+		silver: 58.76, // Fallback data
+		platinum: 1663.6, // Fallback data
 		loading: true
 	};
+
+	// let spotPrices = {
+	// 	goldBid: 2350.0,
+	// 	goldAsk: 2350.0,
+	// 	goldAvg: 2350.0,
+	// 	silverBid: 2350.0,
+	// 	silverAsk: 2350.0,
+	// 	silverAvg: 2350.0,
+	// 	platBid: 2350.0,
+	// 	platAsk: 2350.0,
+	// 	platAvg: 2350.0,
+	// 	loading: true
+	// };
 
 	let calculatedValue: number = 0;
 
 	// --- Data Fetching (metalpriceapi) ---
-	onMount(async () => {
-		// IMPORTANT: You need an API key from a service like https://metalpriceapi.com/
-		// Replace 'YOUR_API_KEY' with your actual key.
-		const API_KEY = 'YOUR_API_KEY';
-		const API_URL = `https://api.metalpriceapi.com/v1/latest?api_key=${API_KEY}&base=USD&currencies=XAU,XAG,XPT`;
-
-		try {
-			// Comment out or remove the fetch call if you don't have an API key yet
-			const response = await fetch(API_URL);
-			if (!response.ok) {
-				throw new Error('Network response was not ok');
-			}
-			const data = await response.json();
-
-			// Rates are per ounce, which we'll treat as troy ounce for spot prices
-			spotPrices.gold = 1 / data.rates.XAU;
-			spotPrices.silver = 1 / data.rates.XAG;
-			spotPrices.platinum = 1 / data.rates.XPT;
-			console.log('spotPrices: ', spotPrices);
-		} catch (error) {
-			console.error('Failed to fetch spot prices. Using fallback data.', error);
-			// The component will use the fallback data if the API call fails
-		} finally {
-			spotPrices.loading = false;
-		}
-	});
-
-	// --- Data Fetching (freegoldprice) ---
 	// onMount(async () => {
 	// 	// IMPORTANT: You need an API key from a service like https://metalpriceapi.com/
 	// 	// Replace 'YOUR_API_KEY' with your actual key.
-	// 	const API_KEY = 'DjkIBjMhjTP7TUySBeFCos0CH0xaDNSkMXjzrI2U1bZZtNJv1FyOyr4jqJUL';
-	// 	const API_URL = `https://freegoldprice.org/api/v2?key=${API_KEY}&action=GSPPJ`;
+	// 	const API_KEY = 'YOUR_API_KEY';
+	// 	const API_URL = `https://api.metalpriceapi.com/v1/latest?api_key=${API_KEY}&base=USD&currencies=XAU,XAG,XPT`;
 
 	// 	try {
 	// 		// Comment out or remove the fetch call if you don't have an API key yet
@@ -61,15 +46,56 @@
 	// 		const data = await response.json();
 
 	// 		// Rates are per ounce, which we'll treat as troy ounce for spot prices
-	// 		spotPrices.gold = 1 / data.gold.USD.bid;
-	// 		spotPrices.silver = 1 / data.silver.USD.bid;
-	// 		spotPrices.platinum = 1 / data.platinum.USD.bid;
+	// 		spotPrices.gold = 1 / data.rates.XAU;
+	// 		spotPrices.silver = 1 / data.rates.XAG;
+	// 		spotPrices.platinum = 1 / data.rates.XPT;
 	// 		console.log('spotPrices: ', spotPrices);
 	// 	} catch (error) {
 	// 		console.error('Failed to fetch spot prices. Using fallback data.', error);
 	// 		// The component will use the fallback data if the API call fails
 	// 	} finally {
 	// 		spotPrices.loading = false;
+	// 	}
+	// });
+
+	// --- Data Fetching (freegoldprice) ---
+	// onMount(async () => {
+	// 	console.log('%c[CLIENT] Fetching /api/metal-prices...', 'color: orange; font-weight: bold;');
+
+	// 	try {
+	// 		const response = await fetch('/api/metal-prices').catch((err) => {
+	// 			console.error('[CLIENT] Fetch threw BEFORE response:', err);
+	// 			throw err;
+	// 		});
+
+	// 		console.log('[CLIENT] Response:', response);
+	// 		console.log('[CLIENT] Status:', response.status, 'OK:', response.ok);
+
+	// 		const raw = await response.text();
+	// 		console.log('[CLIENT] RAW TEXT:', raw);
+
+	// 		let data;
+	// 		try {
+	// 			data = JSON.parse(raw);
+	// 			console.log('[CLIENT] PARSED JSON:', data.GSPPJ);
+	// 		} catch (err) {
+	// 			console.error('[CLIENT] JSON PARSE ERROR:', err);
+	// 			throw err;
+	// 		}
+
+	// 		console.log('[CLIENT] Extracting bids...');
+
+	// 		spotPrices.goldAsk = data?.GSPPJ?.Gold?.USD?.ask ?? 0;
+	// 		spotPrices.goldBid = data?.GSPPJ?.Gold?.USD?.bid ?? 0;
+	// 		spotPrices.silverBid = data?.GSPPJ?.Silver?.USD?.bid ?? 0;
+	// 		spotPrices.platBid = data?.GSPPJ?.Platinum?.USD?.bid ?? 0;
+
+	// 		console.log('[CLIENT] spotPrices:', spotPrices);
+	// 	} catch (error) {
+	// 		console.error('[CLIENT] FINAL CATCH ERROR:', error);
+	// 	} finally {
+	// 		spotPrices.loading = false;
+	// 		console.log('[CLIENT] Loading complete');
 	// 	}
 	// });
 
@@ -101,7 +127,7 @@
 		}
 	};
 
-	const itemTypes = ['Bar', 'Ingot', 'Coin', 'Chains', 'Jewelry', 'Other'];
+	const itemTypes = ['Bar', 'Coin', 'Chains', 'Jewelry', 'Other'];
 
 	// --- Reactive Calculations ---
 	$: {
@@ -122,7 +148,7 @@
 </script>
 
 <div
-	class="mx-auto m-6 max-w-3xl justify-center items-center gap-1.5 sm:gap-3 bg-white border border-gray-200 shadow-2xs rounded-3xl p-4 md:p-14 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400"
+	class="mx-auto m-6 w-full justify-center items-center gap-1.5 sm:gap-3 bg-white border border-gray-200 shadow-2xs rounded-3xl p-4 md:p-14 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400"
 >
 	<h2 class="text-3xl tracking-tight text-stone-900 dark:text-stone-100 mb-8">
 		Precious Metal Value Calculator
@@ -179,12 +205,12 @@
 
 			<!-- Item Type Selection -->
 			<div class="form-group">
-				<label for="itemType">Item Type</label>
+				<!-- <label for="itemType">Item Type</label>
 				<select id="itemType" bind:value={itemType}>
 					{#each itemTypes as type}
 						<option value={type}>{type}</option>
 					{/each}
-				</select>
+				</select> -->
 			</div>
 		</div>
 	</form>
