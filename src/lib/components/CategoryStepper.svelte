@@ -13,7 +13,7 @@
 	<div class="flex flex-col flex-[1_0_0%] bg-white dark:bg-neutral-800">
 		<a
 			class="flex flex-col group bg-white shadow-2xs overflow-hidden hover:shadow-lg focus:outline-hidden focus:shadow-lg transition dark:bg-neutral-900 dark:shadow-neutral-700/70"
-			href="#"
+			href="/custom"
 		>
 			<div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] overflow-hidden">
 				<img
@@ -34,13 +34,13 @@
 	<div class="flex flex-col flex-[1_0_0%] bg-white dark:bg-neutral-800">
 		<a
 			class="flex flex-col group bg-white shadow-2xs overflow-hidden hover:shadow-lg focus:outline-hidden focus:shadow-lg transition dark:bg-neutral-900 dark:shadow-neutral-700/70"
-			href="#"
+			href="/jewelry"
 		>
 			<div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] overflow-hidden">
 				<img
 					src={category_jewelry}
 					class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out"
-					alt="coins"
+					alt="jewelry"
 				/>
 			</div>
 			<div class="p-4 md:p-5">
@@ -55,13 +55,13 @@
 	<div class="flex flex-col flex-[1_0_0%] bg-white dark:bg-neutral-800">
 		<a
 			class="flex flex-col group bg-white shadow-2xs overflow-hidden hover:shadow-lg focus:outline-hidden focus:shadow-lg transition dark:bg-neutral-900 dark:shadow-neutral-700/70"
-			href="#"
+			href="/bars"
 		>
 			<div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] overflow-hidden">
 				<img
 					class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out"
 					src={category_bars}
-					alt="pellets"
+					alt="bars"
 				/>
 			</div>
 			<div class="p-4 md:p-5">
@@ -80,13 +80,13 @@
 	<div class="flex flex-col flex-[1_0_0%] bg-white dark:bg-neutral-800">
 		<a
 			class="flex flex-col group bg-white shadow-2xs overflow-hidden hover:shadow-lg focus:outline-hidden focus:shadow-lg transition dark:bg-neutral-900 dark:shadow-neutral-700/70"
-			href="#"
+			href="/coins"
 		>
 			<div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] overflow-hidden">
 				<img
 					class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out"
 					src={category_coins}
-					alt="bars"
+					alt="coins"
 				/>
 			</div>
 			<div class="p-4 md:p-5">
@@ -102,13 +102,13 @@
 	<div class="flex flex-col flex-[1_0_0%] bg-white dark:bg-neutral-800">
 		<a
 			class="flex flex-col group bg-white shadow-2xs overflow-hidden hover:shadow-lg focus:outline-hidden focus:shadow-lg transition dark:bg-neutral-900 dark:shadow-neutral-700/70"
-			href="#"
+			href="/pellets"
 		>
 			<div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] overflow-hidden">
 				<img
 					class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out"
 					src={category_pellets}
-					alt="ore"
+					alt="pellets"
 				/>
 			</div>
 			<div class="p-4 md:p-5">
@@ -123,13 +123,13 @@
 	<div class="flex flex-col flex-[1_0_0%] bg-white dark:bg-neutral-800">
 		<a
 			class="flex flex-col group bg-white shadow-2xs overflow-hidden hover:shadow-lg focus:outline-hidden focus:shadow-lg transition dark:bg-neutral-900 dark:shadow-neutral-700/70"
-			href="#"
+			href="/ore"
 		>
 			<div class="relative pt-[50%] sm:pt-[60%] lg:pt-[80%] overflow-hidden">
 				<img
 					class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out"
 					src={category_ore}
-					alt="Card"
+					alt="ore"
 				/>
 			</div>
 			<div class="p-4 md:p-5">

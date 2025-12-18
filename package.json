@@ -37,6 +37,8 @@
 		"@preline/accordion": "^3.2.3",
 		"@preline/collapse": "^3.2.3",
 		"@preline/dropdown": "^3.2.3",
+		"@preline/stepper": "^3.2.3",
+		"@preline/tabs": "^3.2.3",
 		"@preline/tree-view": "^3.2.3",
 		"@tailwindcss/vite": "^4.1.17",
 		"preline": "^3.2.3",

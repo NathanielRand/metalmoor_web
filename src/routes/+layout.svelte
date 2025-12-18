@@ -31,7 +31,7 @@
 			<div class="md:ps-3">
 				<a
 					class="group inline-flex items-center gap-x-2 py-2 px-3 bg-amber-400/80 tracking-wider font-bold text-lg text-nowrap text-white rounded-full focus:outline-hidden"
-					href="#"
+					href="/custom"
 				>
 					Custom Build
 				</a>
@@ -93,11 +93,11 @@
 			>
 				<a
 					class="pe-3 ps-px sm:px-3 md:py-4 text-lg text-white hover:text-neutral-300 tracking-wider font-bold focus:outline-hidden focus:text-neutral-300"
-					href="#">Buy Ours</a
+					href="/shop">Inventory</a
 				>
 				<a
 					class="pe-3 ps-px sm:px-3 md:py-4 text-lg text-white hover:text-neutral-300 tracking-wider font-bold focus:outline-hidden focus:text-neutral-300"
-					href="#">Sell Yours</a
+					href="/sell">Sell</a
 				>
 				<a
 					class="pe-3 ps-px sm:px-3 md:py-4 text-lg text-white hover:text-neutral-300 tracking-wider font-bold focus:outline-hidden focus:text-neutral-300"

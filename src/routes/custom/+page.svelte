@@ -8,7 +8,7 @@
 	import img_pendant from '$lib/assets/custom/pendant.png';
 </script>
 
-<section class="px-4 md:px-8 py-8 md:py-16">
+<section class="px-4 md:px-12 py-8 md:py-16">
 	<h1 class="text-7xl font-black text-black dark:text-white mb-1">Custom Craft</h1>
 	<h4 class="text-3xl font-thin text-black dark:text-white mb-6">
 		Create custom jewelry using our simple stepper to craft the exact piece you desire.
@@ -73,7 +73,7 @@
 			<div
 				class="relative bg-white border border-gray-200 shadow-2xs rounded-xl dark:bg-neutral-950/70 dark:border-neutral-700 dark:shadow-neutral-700/70"
 			>
-				<img class="w-auto h-[302px] rounded-xl" src={img_neck} alt="Card" />
+				<img class="w-auto h-[293px] rounded-xl" src={img_neck} alt="Card" />
 				<div class="absolute bottom-0 start-0 end-0">
 					<div class="px-4 pb-3 pt-2 bg-neutral-50/10">
 						<h3 class="text-5xl text-black dark:text-white font-black">Neck</h3>

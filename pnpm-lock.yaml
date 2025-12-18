@@ -20,6 +20,12 @@ importers:
       '@preline/dropdown':
         specifier: ^3.2.3
         version: 3.2.3
+      '@preline/stepper':
+        specifier: ^3.2.3
+        version: 3.2.3
+      '@preline/tabs':
+        specifier: ^3.2.3
+        version: 3.2.3
       '@preline/tree-view':
         specifier: ^3.2.3
         version: 3.2.3
@@ -342,6 +348,12 @@ packages:
 
   '@preline/dropdown@3.2.3':
     resolution: {integrity: sha512-cvTJQ8rPdb6QP9tfPwdCgjhif3+/UR1b6edDETURSaTCBzGtfQhoiSCFZAn1fNBwJEE0yYH007vcp+VOEDTJYw==}
+
+  '@preline/stepper@3.2.3':
+    resolution: {integrity: sha512-54hKvXvSWVfjjqIltAkHsg8LnSz47+VLsO0dpW/ogAa1vNlKTuQ46tzJsyDsC/gT3DpSrefbQNlF+oo7lYybkw==}
+
+  '@preline/tabs@3.2.3':
+    resolution: {integrity: sha512-ipXFqluOmE/FHLroMCChDHCcdtda0jr7s+2qeBv+DsIaLYilcWTlNVrnM+2/RCiKgtdhVtvDckFWYcei8xrlXA==}
 
   '@preline/tree-view@3.2.3':
     resolution: {integrity: sha512-9Zqbd2cj+pOl0hcgrmdX9igejWt0wKRlltQ//+Va80endMRY7dhJMqBleAhbJi/ztIhxOzrt7yAK3+rLr9lwNw==}
@@ -1574,6 +1586,10 @@ snapshots:
   '@preline/dropdown@3.2.3':
     dependencies:
       '@floating-ui/dom': 1.7.4
+
+  '@preline/stepper@3.2.3': {}
+
+  '@preline/tabs@3.2.3': {}
 
   '@preline/tree-view@3.2.3': {}
 
